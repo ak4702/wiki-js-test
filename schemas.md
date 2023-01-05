@@ -2,11 +2,27 @@
 title: Schemas
 description: 
 published: true
-date: 2023-01-05T09:53:37.888Z
+date: 2023-01-05T11:16:28.326Z
 tags: schema, quick-start
 editor: markdown
 dateCreated: 2023-01-05T09:43:18.382Z
 ---
+
+## Coffeescript
+
+```coffee
+imap_client.once "error", (err) ->
+  console.error "imap error."
+  imap_client.end()
+  server.close()
+  throw err
+  return
+
+imap_client.once "end", ->
+  console.log "Connection ended."
+  server.close()
+  return
+```
 
 ## Defining a Schema
 
